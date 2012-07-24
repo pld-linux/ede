@@ -1,0 +1,11 @@
+--- ede-2.0/m4/pkg.m4.old	2012-07-24 20:55:13.000000000 +0200
++++ ede-2.0/m4/pkg.m4	2012-07-24 20:55:21.000000000 +0200
+@@ -35,7 +35,7 @@ AC_DEFUN([PKG_CHECK_MODULES], [
+ 
+             AC_MSG_CHECKING($1_LIBS)
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
++            if test "$SHELL" = "/bin/sh"; then
+                 ## ksh does not do escaping properly
+                 $1_LIBS="`$PKG_CONFIG --libs-only-L "$2"` `$PKG_CONFIG --libs-only-l "$2"`"
+             else
