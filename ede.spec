@@ -1,8 +1,8 @@
-# TODO: CFLAGS, .so files in /usr/share
+# TODO: .so files in /usr/share
 Summary:	Equinox Desktop Environment
 Name:		ede
 Version:	2.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/ede/%{name}-%{version}.tar.gz
@@ -30,7 +30,7 @@ http://www.fltk.org.
 %build
 ./autogen.sh
 %configure
-jam -q -dx
+OPTIMFLAGS="%{rpmcflags} %{rpmcxxflags}" jam -q -dx
 
 %install
 rm -rf $RPM_BUILD_ROOT
